@@ -11,7 +11,7 @@ public class DuplicateString {
 		
 		String str = "this is a java program for a duplicate word in java";
 
-		//findDuplicateWords(str);
+		findDuplicateWords(str);
 		findDuplicateCharacters(str);
 		
 	}
