@@ -1,0 +1,12 @@
+1. SQL query to find employee name starts with 'A'
+	select * from Employee where name like 'A%'; (where A case sensetive)
+
+2. SQL query to find 2nd highest salary
+	select max(sal) from Employee where sal < (select max(sal) from employee);
+
+3. SQL query to list employees in ascending/desending order by salary.
+	select * from employee order by sal;
+	select * from employee order by sal desc;
+
+4. SQL query to find max salary from each department.
+	select deptname, max(sal) from employee group by deptname;
