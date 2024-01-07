@@ -26,3 +26,10 @@ public class FirstCharacterUpperInWord {
 	}
 
 }
+
+/*
+ * O/P: my name is ajay and i am an engineer
+ * ==========================================
+ *  My Name Is Ajay And I Am An Engineer 
+ *  My Name Is Ajay And I Am An Engineer
+ */
