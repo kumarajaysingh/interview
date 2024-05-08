@@ -44,7 +44,22 @@ public class MapAndFlatMap {
 		for (Integer i : fMap) {
 			System.out.print(i+ "  ");
 		}
-
+		
+		 List<String> listStr = Arrays.asList("Sachin", "Sehwag", "Yuvraj", "Dhoni"); 
+		
+		 listStr.stream().flatMap(str -> Stream.of(str.charAt(2))). forEach(System.out::println);//chvo
+		 
+		 
+		 List<Character> listStr1 =  listStr.stream().flatMap(str -> Stream.of(str.charAt(2))).collect(Collectors.toList());
+		 System.out.println("==============================");
+		 
+		 listStr1.forEach(System.out::println);
+		 
+		 //Square, filter and average
+		 
+		Double avg =  list1.stream().map(n -> n*n).filter(num -> num < 100).mapToInt(i -> i).average().getAsDouble();
+		 
+		 System.out.println("==============AVERAGE====>"+avg);
 	}
 
 }

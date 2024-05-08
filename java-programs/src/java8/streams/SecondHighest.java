@@ -1,9 +1,13 @@
 package java8.streams;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+
+import java8.stream.model.Employee;
 
 public class SecondHighest {
 
@@ -15,6 +19,7 @@ public class SecondHighest {
 
 		System.out.println(sortList.get());
 		System.out.println("=====================================");
+		System.out.println("Highest number : "+numList.stream().sorted(Collections.reverseOrder()).distinct().findFirst().get());
 		
 		Integer lowest = numList.stream().sorted().distinct().skip(1).findFirst().get();
 
@@ -29,6 +34,18 @@ public class SecondHighest {
 		
 		List<Integer> list2 = numList.stream().sorted(Collections.reverseOrder()).distinct().limit(3).toList();
 		System.out.println(list2);
+		
+		nthHighestSalary(1);
+		
+	}
+
+	private static void nthHighestSalary(int n) {
+		// TODO Auto-generated method stub
+		List<Employee> empList = EmployeeUtil.getEmployeeList1();
+		
+		Employee emp = empList.stream().sorted(Comparator.comparing(Employee::getSalary,Comparator.reverseOrder())).skip(n).findFirst().get();
+		
+		System.out.println(emp.getName()+ " : " +emp.getSalary());
 		
 	}
 
